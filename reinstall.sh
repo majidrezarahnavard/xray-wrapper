@@ -9,7 +9,7 @@ install_dir=/root/xray-configuration
 
 # Remove files
 rm $install_dir/config.json
-rm $install_dir/subscribe.*
+rm $install_dir/s.*
 rm /var/www/html/subs/s.*
 
 

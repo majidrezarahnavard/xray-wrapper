@@ -67,6 +67,8 @@ apt-get install apache2
 sudo sed -i 's/80/8090/' /etc/apache2/ports.conf
 sudo sed 's/80/8090/' /etc/apache2/sites-enabled/000-default.conf #for your examples sake
 
+cd /var/www/html/
+mkdir subs
 
 
 Install cron job 
