@@ -1,0 +1,108 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "inbounds": [
+        {
+            "listen": null,
+            "port": 443,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "email": "Sarina",
+                        "id": "28208267-f427-4a8f-a6de-f641a7f04793"
+                    }
+                ]
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic",
+                    "fakedns"
+                ],
+                "enabled": true
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "none",
+                "sockopt": {
+                    "acceptProxyProtocol": false,
+                    "mark": 0,
+                    "tcpFastOpen": true,
+                    "tproxy": "off"
+                },
+                "tcpSettings": {
+                    "acceptProxyProtocol": false,
+                    "header": {
+                        "request": {
+                            "headers": {
+                                "Host": [
+                                    "mashhad1.irancell.ir,shiraz1.irancell.ir,tabriz1.irancell.ir,speedtest1.irancell.ir,ahvaz1.irancell.ir,esfahan1.irancell.ir,server-9889.prod.hosts.ooklaserver.net,server-10076.prod.hosts.ooklaserver.net,server-9795.prod.hosts.ooklaserver.net,server-4317.prod.hosts.ooklaserver.net"
+                                ]
+                            },
+                            "method": "GET",
+                            "path": [
+                                "/download",
+                                "/upload"
+                            ]
+                        },
+                        "response": {
+                            "headers": {
+                                "Connection": [
+                                    "Keep-Alive"
+                                ],
+                                "Content-Length": [
+                                    "109"
+                                ],
+                                "Content-Type": [
+                                    "text/html"
+                                ]
+                            },
+                            "reason": "OK",
+                            "status": "200",
+                            "version": "1.1"
+                        },
+                        "type": "http"
+                    }
+                }
+            },
+            "tag": "inbound-8080"
+        }
+    ],
+    "outbounds": [
+        {
+            "tag": "direct",
+            "protocol": "freedom",
+            "settings": {}
+        },
+        {
+            "tag": "block",
+            "protocol": "blackhole",
+            "settings": {}
+        }
+    ],
+    "routing": {
+        "domainStrategy": "IPOnDemand",
+        "rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:cn",
+                    "geoip:ir"
+                ],
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:category-porn"
+                ],
+                "outboundTag": "block"
+            }
+        ]
+    },
+    "stats": {},
+    "transport": null
+}

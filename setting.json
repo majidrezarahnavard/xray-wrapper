@@ -1,0 +1,12 @@
+{
+    "port": 443,
+    "bot_token" : "627442321431:bga9g_13IQBuAcDb3DSemBceracA-KDFS3b",
+    "chat_id" : "-1003385273232",
+    "dynamic_subscription" : false,
+    "channel_name" : "Sarina_Esmailzadeh",
+    "send_vnstat" : false,
+    "aggregate_subscriptions" : [],
+    "send_configuration" : "first",
+    "send_subscriptions" : true,
+    "random_header" : true
+ }
