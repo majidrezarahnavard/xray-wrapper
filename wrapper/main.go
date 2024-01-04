@@ -424,7 +424,8 @@ func determineTarget(initialData []byte, remoteAddr net.Addr) string {
 	}
 
 	log.Println("Malicious fella connected from", remoteAddr, "and requested", cleanString(initialData), "so we'll forward them to", remoteTarget)
-	return remoteTarget
+	return apacheTarget
+	// return remoteTarget
 }
 
 func parseSpeed(speedStr string) int64 {

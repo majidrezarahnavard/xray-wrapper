@@ -70,7 +70,13 @@ sudo sed -i 's/80/8090/' /etc/apache2/sites-enabled/000-default.conf #for your e
 service apache2 restart
 
 cd /var/www/html/
+
+git clone https://github.com/codingstella/vCard-personal-portfolio.git
+cp -ar ./vCard-personal-portfolio/*  /var/www/html/
+rm -rf ./vCard-personal-portfolio/
+
 mkdir subs
+
 
 
 Install cron job 
