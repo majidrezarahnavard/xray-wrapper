@@ -108,7 +108,7 @@ func init() {
 	bindAddress = ":80"
 	localTarget = "127.0.0.1:8081"
 	apacheTarget = "127.0.0.1:8090"
-	remoteTarget = "www.speedtest.net:443"
+	remoteTarget = "speedtest.net:443"
 	uploadSpeedStr = "20MB"
 	downloadSpeedStr = "20MB"
 	paths = []string{"/download", "/upload"}
@@ -413,7 +413,7 @@ func cleanString(b []byte) string {
 func determineTarget(initialData []byte, remoteAddr net.Addr) string {
 	for _, path := range paths {
 		if strings.Contains(string(initialData), path) {
-			log.Println("A new connection from", remoteAddr, "and requested", path, "so we'll forward them to", localTarget)
+			// log.Println("A new connection from", remoteAddr, "and requested", path, "so we'll forward them to", localTarget)
 			return localTarget
 		}
 	}
